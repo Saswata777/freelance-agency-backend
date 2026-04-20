@@ -1,4 +1,13 @@
 package com.freelance.agency.enums;
 
 public enum LeadStatus {
+    LEAD_CREATED,
+    CALL_BOOKED,
+    CALL_COMPLETED,
+    PAYMENT_PENDING,
+    PAYMENT_COMPLETED,
+    PROJECT_IN_PROGRESS,
+    PROJECT_DELIVERED,
+    TESTIMONIAL_REQUESTED,
+    CLOSED
 }
