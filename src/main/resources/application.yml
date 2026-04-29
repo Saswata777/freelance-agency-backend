@@ -6,9 +6,9 @@ spring:
     name: agency
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/freelance_agency_db
-    username: postgres
-    password: your_password_here
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -24,8 +24,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: your_email@gmail.com
-    password: your_app_password_here
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -44,15 +44,15 @@ spring:
 
   security:
     user:
-      name: admin
-      password: admin@agency123
+      name: ${ADMIN_USERNAME}
+      password: ${ADMIN_PASSWORD}
 
 app:
-  frontend-url: http://localhost:5173
-  admin-email: admin@yourdomain.com
+  frontend-url: ${FRONTEND_URL}
+  admin-email: ${ADMIN_EMAIL}
   payment:
-    razorpay-key-id: your_razorpay_key
-    razorpay-key-secret: your_razorpay_secret
+    razorpay-key-id: ${RAZORPAY_KEY_ID}
+    razorpay-key-secret: ${RAZORPAY_KEY_SECRET}
   booking:
     slot-duration-minutes: 60
     max-days-ahead: 14
