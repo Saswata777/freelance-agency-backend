@@ -5,7 +5,6 @@ spring:
   application:
     name: agency
 
-  # Database
   datasource:
     url: jdbc:postgresql://localhost:5432/freelance_agency_db
     username: postgres
@@ -16,12 +15,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    defer-datasource-initialization: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
 
-  # Mail (Gmail SMTP)
   mail:
     host: smtp.gmail.com
     port: 587
@@ -34,12 +33,20 @@ spring:
           starttls:
             enable: true
 
-  # Devtools
   devtools:
     restart:
       enabled: true
 
-# App custom config
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+
+  security:
+    user:
+      name: admin
+      password: admin@agency123
+
 app:
   frontend-url: http://localhost:5173
   admin-email: admin@yourdomain.com
@@ -50,7 +57,6 @@ app:
     slot-duration-minutes: 60
     max-days-ahead: 14
 
-# Logging
 logging:
   level:
     com.freelance.agency: DEBUG
